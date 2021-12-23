@@ -73,13 +73,13 @@ function makeResponsive() {
         .enter()
         .append("circle")
         .attr("cx", d => xLinearScale(d.poverty))
-        .attr("cy", d => yLinearScale(d.healthcare))
+        .attr("cy", d => yLinearScale(d.healthcare)-3)
         .attr("r", "10")
         .attr("fill", "#96C7DE")
         .attr("stroke-width", "1")
         .attr("stroke", "white");
 
-        var stateGroup = chartGroup.selectAll("text")
+        var stateGroup = chartGroup.selectAll("anything")
         .data(liveData)
         .enter()
         .append("text")
