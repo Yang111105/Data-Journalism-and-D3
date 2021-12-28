@@ -74,6 +74,15 @@ function makeResponsive() {
       return circlesGroup;
     }
 
+    function renderStates(stateGroup, newXScale, chosenXAxis) {
+
+      stateGroup.transition()
+      .duration(1000)
+        .attr("x", d => newXScale(d[chosenXAxis]));
+
+      return stateGroup;
+    }
+
     // function used for updating circles group with new tooltip
     function updateToolTip(chosenXAxis, circlesGroup) {
 
@@ -236,6 +245,9 @@ function makeResponsive() {
             // updates tooltips with new info
             circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
 
+            // updates circles with new x values
+            stateGroup = renderStates(stateGroup, xLinearScale, chosenXAxis);
+
             // changes classes to change bold text
             if (chosenXAxis === "age") {
               inPovertyLabel
@@ -258,6 +270,17 @@ function makeResponsive() {
               householdIncomeLabel
                 .classed("active", true)
                 .classed("inactive", false);
+            }
+            else {
+              inPovertyLabel
+                .classed("active", true)
+                .classed("inactive", false);  
+              ageLabel
+                .classed("active", false)
+                .classed("inactive", true);
+              householdIncomeLabel
+                .classed("active", false)
+                .classed("inactive", true);
             }
           }
         });
