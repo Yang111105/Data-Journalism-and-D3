@@ -60,14 +60,14 @@ body {
 
 .tooltip {
   position: absolute;
-  width: 135px;
-  height: 60px;
+  width: 130px;
+  height: 70px;
   padding: 2px;
   padding-top: 8px;
-  font: 12px sans-serif;
+  font: 10px sans-serif;
   color: white;
   text-align: center;
-  background: #551aaf;
+  background: #1a6caf;
   border: 0;
   border-radius: 10px;
 }
